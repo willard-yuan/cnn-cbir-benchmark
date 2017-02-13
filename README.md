@@ -76,3 +76,14 @@ top@K | 维度 | mAP
 | 维度 | mAP
 |---|--- 
 | 128 | 59.15%
+可能的原因：Oxford查询图片都是地标图像集，而这几百万数据集都是短视频中的一些数据，导致获得的主成分不利于地标数据的表达，所以精度降低。
+
+### HybridNet
+
+do crop, do qe(top@10), do PCA，最高维度256。
+
+| 维度 | mAP
+|---|--- 
+| 256 | 62.41%
+
+> We chose the HybridNet for several reasons: first, its ar- chitecture is the same as the famous AlexNet [19]; second, the HybridNet has been trained on the ImageNet subset used for ILSVRC competitions (as many others) and the Places Database [29]; last, but not least, experiments conducted on various datasets demonstrate the good transferability of the learning [29, 12, 9]. Originally proposed in [29], Hybrid- Net has been used in [29, 12, 9]. The results reported in [12] show that deep features extracted from the HybridNet outperforms various architectures trained only on ImageNet, on both InriaHolidays and OxforBuilding benchmarks.
