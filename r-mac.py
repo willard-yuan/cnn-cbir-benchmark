@@ -48,8 +48,12 @@ else:
 
 cenW = [math.floor(wl2 + tmp_i*b) -wl2 for tmp_i in xrange(l-1+Hd+1)]
 
-
-R = X[0:int(wl)][0:int(wl)]
+R = X[int(i_+1-1):int(i_+wl)][int(j_+1-1):int(j_+wl)][:]
 
 if not bool(min(R.shape)):
     continue
+
+if not bool(max(R.shape[0], R.shape[1]))
+    x = np.zeros((R.shape[2],), dtype=np.float32)  
+
+x = R.max(0).max(0)
