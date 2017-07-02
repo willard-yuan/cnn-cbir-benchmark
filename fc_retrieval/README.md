@@ -27,5 +27,5 @@
 
 model | Dataset used to fine-tuning | layer | mAP
 :---:|:---:|:---:|:---:|
-[neural.caffemodel](http://pan.baidu.com/s/1i44RRgx) | [landmark dataset](https://pan.baidu.com/s/1mit6Izm) (baiduyun code: 8hjn)| fc6 | 45.9%
-[VGG_ILSVRC_16_layers.caffemodel](http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel) | - | fc6 | 60.2%
+[neural.caffemodel](http://pan.baidu.com/s/1i44RRgx) | [landmark dataset](https://pan.baidu.com/s/1mit6Izm) (baiduyun code: 8hjn)| fc6 | 60.2%
+[VGG_ILSVRC_16_layers.caffemodel](http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel) | - | fc6 | 45.9%
