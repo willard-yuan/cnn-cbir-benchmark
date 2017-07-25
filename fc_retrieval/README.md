@@ -14,11 +14,8 @@
 │   └── pool5_vgg16.prototxt
 ├── src
 │   ├── brute.py
-│   ├── brute.pyc
 │   ├── extract_features.py
-│   ├── extract_features.pyc
-│   ├── oxford5k_feats_extract.py
-│   └── oxford5k_feats_extract.pyc
+│   └── oxford5k_feats_extract.py
 └── tools
     └── compute_ap
 ```
