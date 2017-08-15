@@ -18,8 +18,9 @@ vlad_retrieval | SIFT | - | ongoing | -
 
 the methods on above have the following characteristics:
 
-- low dimension
-- time - tested, and are dimanstracted effectively
+- **Low dimension**
+- **Time - tested**, and are dimanstracted effectively
+- **Used in industry**
 
 ## Contribution
 
