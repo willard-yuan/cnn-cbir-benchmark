@@ -1,9 +1,26 @@
-## mAP performance
+## Benchmark for Image Retrieval (BKIR)
 
-The mAP performance on Oxford building dataset can be seen on [wiki](https://github.com/willard-yuan/cnn-cbir-benchmark/wiki)
+[![License](https://img.shields.io/badge/license-BSD-blue.svg)](../LICENSE)
 
-#### Visualize heatmap
+This project tries to build a benchmark for image retrieval, particully for Instance-level image retrieval.
 
-The `visualize_heatmap.py` is used to visualize heatmap.
+## Methods
 
-![](./data/test.png)
+The following methods are evaluated on [Oxford Building dataset](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/). The evaluation adopts mean Average Precision (mAP), which is computed using the code provided by [compute_ap.cpp](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/compute_ap.cpp).
+
+method | feature |  mAP (best) | status | links
+:---:|:---:|:---:|:---:|:---:
+fc_retrieval | CNN | 60.2% | finished | [fc_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/fc_retrieval)
+rmac_retrieval | CNN | - | finished | coming soon
+crow_retrieval | CNN | - | finished | coming soon
+fv_retrieval | SIFT | 67.29% | finished | [fc_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/fv_retrieval)
+vlad_retrieval | SIFT | - | ongoing | -
+
+the methods on above have the following characteristics:
+
+- low dimension
+- time - tested, and are dimanstracted effectively
+
+## Contribution
+
+If you are interested in this project, feel free to contribute your code. Only Python and C++ code are accepted.
