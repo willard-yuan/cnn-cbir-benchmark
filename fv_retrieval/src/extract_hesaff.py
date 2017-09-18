@@ -28,7 +28,6 @@ if __name__ == '__main__':
 
     parts = 50
     bbin = '/home/yuanyong/cpp/hesaff/hesaff'
-    
     txt_path = '/raid/yuanyong/yael_fv/oxford.txt'
     save_dir = '/raid/yuanyong/yael_fv/oxford_hesaff_sift/'
 
