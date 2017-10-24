@@ -7,29 +7,30 @@ import numpy as np
 from yael import ynumpy
 
 
-h5f = h5py.File('./oxford_gmm_root_32/fisher_8192.h5', 'w')
-weights = np.load('./oxford_gmm_root_32/w.gmm.npy')
-mu = np.load('./oxford_gmm_root_32/mu.gmm.npy')
-sigma = np.load('./oxford_gmm_root_32/sigma.gmm.npy')
-mean = np.load('./oxford_gmm_root_32/mean.gmm.npy')
-pca_transform = np.load('./oxford_gmm_root_32/pca_transform.gmm.npy')
+h5f = h5py.File('../opencv_models/fisher_8192.h5', 'w')
+weights = np.load('../opencv_models/weight.gmm.npy')
+mu = np.load('../opencv_models/mu.gmm.npy')
+sigma = np.load('../opencv_models/sigma.gmm.npy')
+mean = np.load('../opencv_models/mean.gmm.npy')
+pca_transform = np.load('../opencv_models/pca_transform.gmm.npy')
 
 gmm = [weights, mu, sigma]
 
-# 
-txt_path = '/home/yuanyong/py/fv_retrieval/oxford.txt'
+# read names
+txt_path = '../../data/oxford.txt'
 with open(txt_path, 'r') as f:
     content = f.readlines()
     content = [x.strip() for x in content]
 
-# 
+# fv encoding
+hesaff_sift_path = '../opencv_sifts/'
 features = []
 image_names = []
 for i, line in enumerate(content):
     img_name = os.path.basename(line)
     print "%d(%d): %s" %(i+1, len(content), img_name)
-    hesaff_path = os.path.join('/home/yuanyong/py/fv_retrieval/oxford_hesaff_sift', os.path.splitext(os.path.basename(line))[0] + '.hesaff.sift')
-    hesaff_info = np.loadtxt(hesaff_path)
+    hesaff_path = os.path.join(hesaff_sift_path, os.path.splitext(os.path.basename(line))[0] + '.opencv.sift')
+    hesaff_info = np.loadtxt(hesaff_path, skiprows=2)
     if hesaff_info.shape[0] == 0:
         hesaff_info = np.zeros((1, 133), dtype = 'float32')
     elif hesaff_info.shape[0] > 0 and len(hesaff_info.shape) == 1:

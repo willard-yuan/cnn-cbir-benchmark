@@ -6,8 +6,8 @@ import os
 import numpy as np
 from yael import ynumpy
 
-txt_path = '/home/yuanyong/py/fv_retrieval/oxford.txt'
-sift_dir = '/home/yuanyong/py/fv_retrieval/oxford_hesaff_sift'
+txt_path = '../../data/oxford.txt'
+sift_dir = '../opencv_sifts'
 
 with open(txt_path, 'r') as f:
     content = f.readlines()
@@ -17,7 +17,7 @@ with open(txt_path, 'r') as f:
 all_desc = []
 for i, line in enumerate(content):
     print "%d(%d): %s" %(i+1, len(content), line)
-    hesaff_path = os.path.join(sift_dir, os.path.splitext(os.path.basename(line))[0] + '.hesaff.sift')
+    hesaff_path = os.path.join(sift_dir, os.path.splitext(os.path.basename(line))[0] + '.opencv.sift')
     hesaff_info = np.loadtxt(hesaff_path, skiprows=2)
     if hesaff_info.shape[0] == 0:
        continue
@@ -79,8 +79,8 @@ sample = np.dot(sample, pca_transform)
 print "start train GMM ......."
 gmm = ynumpy.gmm_learn(sample, k, nt = 400, niter = 2000, seed = 0, redo = 1, use_weights = True)
 
-np.save("./oxford_gmm_root_32/w.gmm", gmm[0])
-np.save("./oxford_gmm_root_32/mu.gmm", gmm[1])
-np.save("./oxford_gmm_root_32/sigma.gmm", gmm[2])
-np.save("./oxford_gmm_root_32/mean.gmm", mean)
-np.save("./oxford_gmm_root_32/pca_transform.gmm", pca_transform)
+np.save("../opencv_models/weight.gmm", gmm[0])
+np.save("../opencv_models/mu.gmm", gmm[1])
+np.save("../opencv_models/sigma.gmm", gmm[2])
+np.save("../opencv_models/mean.gmm", mean)
+np.save("../opencv_models/pca_transform.gmm", pca_transform)

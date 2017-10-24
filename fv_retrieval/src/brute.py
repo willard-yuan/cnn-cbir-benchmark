@@ -153,7 +153,7 @@ if __name__ == '__main__':
     dir_images = '/home/yuanyong/datasets/oxford'
  
     # query expansion
-    do_QE = True
+    do_QE = False
     topK = 5
     # crop
     do_crop = False
@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
     # load all features
     start = timeit.default_timer()
-    h5f = h5py.File('./oxford_gmm_root_32/fisher_8192.h5', 'r')
+    h5f = h5py.File('../opencv_models/fisher_8192.h5', 'r')
     feats = h5f['feats']
     names = list(h5f['names'])
     stop = timeit.default_timer()
@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
         # compute mean average precision
         gt_prefix = os.path.join(gt_files, fake_query_names[i])
-        cmd = './compute_ap %s %s' % (gt_prefix, rank_file)
+        cmd = '../../tools/compute_ap %s %s' % (gt_prefix, rank_file)
         ap = os.popen(cmd).read()
 
         os.remove(rank_file)

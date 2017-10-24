@@ -13,9 +13,9 @@ def split_list(alist, wanted_parts=1):
              for i in range(wanted_parts) ]
 
 
-def cpu_task(img_names, bbin, save_dir):
+def cpu_task(img_names, bbin, db_dir, save_dir):
     for i, line in enumerate(img_names):
-        img_path = os.path.join('/home/yuanyong/datasets/oxford', line)
+        img_path = os.path.join(db_dir, line)
         cmd = bbin + ' ' + img_path + ' ' + save_dir
         os.system(cmd) # returns the exit status
         print "%d(%d), %s" %(i+1, len(img_names), line)
@@ -26,10 +26,11 @@ if __name__ == '__main__':
     multiprocessing.freeze_support()
     pool = multiprocessing.Pool()
 
-    parts = 50
-    bbin = '/home/yuanyong/cpp/hesaff/hesaff'
-    txt_path = '/raid/yuanyong/yael_fv/oxford.txt'
-    save_dir = '/raid/yuanyong/yael_fv/oxford_hesaff_sift/'
+    parts = 10
+    bbin = '../../tools/hesaff/hesaff'
+    txt_path = '../../data/oxford.txt'
+    db_dir = '/home/yuanyong/datasets/oxford'
+    save_dir = '../hesaff_sifts/'
 
     with open(txt_path, 'r') as f:
         content = f.readlines()
@@ -37,6 +38,6 @@ if __name__ == '__main__':
     blocks = split_list(content, wanted_parts = parts)
 
     for i in xrange(0, parts):
-        pool.apply_async(cpu_task, args=(blocks[i],bbin,save_dir,))
+        pool.apply_async(cpu_task, args=(blocks[i], bbin, db_dir, save_dir,))
     pool.close()
     pool.join()
