@@ -17,7 +17,15 @@
 │   ├── extract_features.py
 │   └── oxford5k_feats_extract.py
 └── tools
-    └── compute_ap
+    └── compute_ap.cpp
+```
+
+## Build evaluation script
+
+The official C++ program provided by the Oxford group, compute_ap.cpp, for computing the mean average precision (mAP) on the retrieval benchmark is provided in this repository for convenience. It is modified to add an explicit include so that it can be compiled everywhere.
+
+```sh
+g++ -O compute_ap.cpp -o compute_ap
 ```
 
 ## CNN Model
