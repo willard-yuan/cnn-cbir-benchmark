@@ -10,7 +10,7 @@ def opencv_format_img_for_vgg(path, resize = False):
     """
     opencv test
     """
-    img = cv2.imread(path, -1) # BGR
+    img = cv2.imread(path, 1) # BGR
     if resize == True:
         img = cv2.resize(img, (224, 224), interpolation = cv2.INTER_LINEAR)
     d = np.float32(img)
