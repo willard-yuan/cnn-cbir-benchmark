@@ -48,6 +48,7 @@ def gpu_task(prototxt, caffemodel, layer, path_images, out, gpu=0):
     h5f.close()
     print "gpu %d task has finished..." % (int(gpu))
 
+    
 if __name__ == '__main__':
 
     multiprocessing.freeze_support()
@@ -58,12 +59,12 @@ if __name__ == '__main__':
     parts = len(gpusID)
     network = 'VggNet'
 
-    dir_images = '/home/yuanyong/datasets/oxford/*'
+    dir_images = 'datasets/oxford/*'
     path_images = [os.path.join(dir_images, f) for f in sorted(glob.glob(dir_images))] #if f.endswith('.jpg')]
 
     # VggNet
-    prototxt = '/home/yuanyong/py/fc_retrieval/model/deploy.prototxt'
-    caffemodel = '/home/yuanyong/py/fc_retrieval/model/nueral.caffemodel'
+    prototxt = 'deploy.prototxt'
+    caffemodel = 'nueral.caffemodel'
 
     out = '../feats/'
 
