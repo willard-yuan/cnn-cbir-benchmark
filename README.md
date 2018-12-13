@@ -12,7 +12,7 @@ method | feature |  mAP (best) | status | links
 :---:|:---:|:---:|:---:|:---:
 fc_retrieval | CNN | 60.2% | finished | [fc_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/fc_retrieval)
 rmac_retrieval | CNN | 75.7%(256d, crop, qe) | finished | [rmac_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/rmac_retrieval)
-crow_retrieval | CNN | to be tested | finished | [crow_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/crow_retrieval)
+crow_retrieval | CNN | 72.8%(256d, crop, qe) | finished | [crow_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/crow_retrieval)
 fv_retrieval | SIFT | 67.29% | finished | [fv_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/fv_retrieval)
 vlad_retrieval | SIFT | 63.13% | finished | [vlad_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/vlad_retrieval)
 
