@@ -60,9 +60,9 @@ if __name__ == '__main__':
     pool = multiprocessing.Pool()
 
     parts = 1
-    txt_path = '/media/cephfs4/yuanyong/td-dz-g599/cbir_public_datasets/oxford/oxford.txt'
-    db_dir = '/media/cephfs4/yuanyong/td-dz-g599/cbir_public_datasets/oxford/jpg'
-    save_dir = '/media/cephfs4/yuanyong/td-dz-g599/cbir_public_datasets/oxford/sosnet'
+    txt_path = './cbir_public_datasets/oxford/oxford.txt'
+    db_dir = './cbir_public_datasets/oxford/jpg'
+    save_dir = './cbir_public_datasets/oxford/sosnet'
 
     with open(txt_path, 'r') as f:
         content = f.readlines()
