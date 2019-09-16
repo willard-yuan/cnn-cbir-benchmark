@@ -15,7 +15,7 @@ rmac_retrieval | [RMAC](https://arxiv.org/abs/1511.05879) | 75.7%(256d, crop, qe
 crow_retrieval | [CROW](https://arxiv.org/pdf/1512.04065.pdf) | 72.8%(256d, crop, qe) | finished | [crow_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/crow_retrieval)
 fv_retrieval | SIFT | 67.29% | finished | [fv_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/fv_retrieval)
 vlad_retrieval | SIFT | 63.13% | finished | [vlad_retrieval](https://github.com/willard-yuan/cnn-cbir-benchmark/tree/master/vlad_retrieval)
-fv_retrieval | [SOSNet](https://github.com/scape-research/SOSNet) | - | ongoing | -
+fv_retrieval | [SOSNet](https://github.com/scape-research/SOSNet) | 50.73% | ongoing | -
 vlad_retrieval | [SOSNet](https://github.com/scape-research/SOSNet) | - | ongoing | -
 
 the methods on above have the following characteristics:
