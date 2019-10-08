@@ -40,7 +40,7 @@ def cpu_task(img_names, db_dir, save_dir):
                     all_strs = locs_str + descs_str
                     f.write(all_strs + '\n')
                 f.close()
-                 
+
             print "%d(%d), %s, desc: %d" %(i+1, len(img_names), line, len(des))
 
 

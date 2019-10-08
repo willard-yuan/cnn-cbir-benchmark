@@ -31,7 +31,6 @@ for i, line in enumerate(content):
 
 # make a big matrix with all image descriptors, rootsift
 all_desc = np.sqrt(np.vstack(all_desc))
-
 n_sample = 256 * 1000
 
 # choose n_sample descriptors at random
@@ -58,15 +57,14 @@ sample = np.dot(sample, pca_transform)
 
 # train Kmeans
 print "start train kmeans ......."
-
 print sample.shape[0]
 
 k = 128                 # number of cluster to create
 d = sample.shape[1]     # dimensionality of the vectors
 n = sample.shape[0]     # number of vectors
-nt = 20              # number of threads to use
-niter = 0           # number of iterations (0 for convergence)
-redo = 1            # number of redo
+nt = 20                 # number of threads to use
+niter = 0               # number of iterations (0 for convergence)
+redo = 1                # number of redo
 
 t0 = time.time()
 (centroids, qerr, dis, assign, nassign) = ynumpy.kmeans(v, k, nt = nt, niter = niter, redo = redo, output = 'full')

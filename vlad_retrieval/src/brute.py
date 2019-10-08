@@ -105,12 +105,12 @@ def compute_euclidean_distance(Q, feats, names, k = None):
         k = len(feats)
 
     dists = ((Q - feats)**2).sum(axis=1)
-    idx = np.argsort(dists) 
+    idx = np.argsort(dists)
     dists = dists[idx]
     rank_names = [names[k] for k in idx]
 
     return (idx[:k], dists[:k], rank_names)
-    
+
 
 def simple_query_expansion(Q, data, inds, top_k=10):
     """
@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
     gt_files = '/home/yuanyong/datasets/gt_files'
     dir_images = '/home/yuanyong/datasets/oxford'
- 
+
     # query expansion
     do_QE = True
     topK = 5
@@ -186,16 +186,16 @@ if __name__ == '__main__':
 
     imgs, query_feats, query_names, fake_query_names = query_images(gt_files, dir_images, 'oxford', names, do_crop)
 
-    #print query_names    
+    #print query_names
     aps = []
     rank_file = 'tmp.txt'
     for i, query in enumerate(query_names):
         Q = query_feats[i]
 
         if do_pca:
-            Q, _ = run_feature_processing_pipeline([Q], params=whitening_params)       
+            Q, _ = run_feature_processing_pipeline([Q], params=whitening_params)
             Q = np.squeeze(Q.astype(np.float32))
-  
+
         idxs, rank_dists, rank_names = compute_cosin_distance(Q, feats, names)
         #idxs, rank_dists, rank_names = compute_euclidean_distance(Q, feats, names)
 
@@ -206,7 +206,7 @@ if __name__ == '__main__':
 
         if do_rerank:
             rank_names = reranking(Q, feats, idxs, rank_names, top_k = 50)
- 
+
         # write rank names to txt
         f = open(rank_file, 'w')
         f.writelines([name.split('.jpg')[0] + '\n' for name in rank_names])
