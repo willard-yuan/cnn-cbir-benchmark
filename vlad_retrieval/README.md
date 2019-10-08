@@ -6,7 +6,7 @@
 
 Since the dimension of VLAD Vector is unusally very high, we must make a compromise between precision and memory. It's strongly recommended to reduce the dimension of SIFT to 32 dimension or 64 dimension. In real world applicaiton, the dimension of VLAD Vector is recommended as 8192, so the number of Guass kernel of GMM is set as 128. The mAP on Oxford building dataset of Fisher Vector is as follows:
 
-Image Size | SIFT dimension | Number of KMeans | Fisher Vector dimension | mAP | mAP (QE) |
+Image Size | SIFT dimension | Number of KMeans | VLAD Vector dimension | mAP | mAP (QE) |
 :---:|:---:|:---:|:---:|:---:|:---:|
 0.5*w x 0.5*h | 32 | 128 | 8192 | 56.39% | 63.13%
 
