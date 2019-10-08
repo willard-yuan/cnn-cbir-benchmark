@@ -73,4 +73,6 @@ t0 = time.time()
 t1 = time.time()
 print "kmeans performed in %.3f s" % (t1 - t0)
 
-np.save("centroids.data", centroids)
+np.save("./model/centroids_data.npy", centroids)
+np.save("./model/pca_data.npy", pca_transform)
+np.save("./model/mean_data.npy", mean)
