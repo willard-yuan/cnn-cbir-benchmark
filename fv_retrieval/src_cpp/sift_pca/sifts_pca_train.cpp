@@ -137,9 +137,9 @@ int main(int argc, char** argv) {
     printf("training PCA finished\n");
 
     // 对SIFT降维
-    mmu::PCAUtils::getInstance()->loadModel(filename);
+    cvtk::PCAUtils::getInstance()->loadModel(filename);
     cv::Mat reducedData;
-    mmu::PCAUtils::getInstance()->reduceDim(train_sifts, reducedData);
+    cvtk::PCAUtils::getInstance()->reduceDim(train_sifts, reducedData);
     printf("reduced sifts mat: %d rows, %d cols\n", reducedData.rows, reducedData.cols);   
 
     // 保存降维结果
