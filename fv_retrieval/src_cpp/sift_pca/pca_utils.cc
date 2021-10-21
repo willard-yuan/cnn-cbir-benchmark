@@ -1,6 +1,6 @@
 #include "pca_utils.h"
 
-namespace mmu {
+namespace cvtk {
 
 void PCAUtils::convertToMat(const float* data, int num, int dim, cv::Mat& mat) {
   mat.create(num, dim, CV_32FC1);
